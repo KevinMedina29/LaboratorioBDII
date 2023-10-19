@@ -197,14 +197,6 @@ create table Envios(
     Notas nvarchar(max)
 );
 
-create table Vacaciones(
-    ID_Vacacion int identity(1,1) primary key,
-    ID_Empleado int not null,
-    FechaInicio datetime not null,
-    FechaFin datetime not null,
-    Aprobada bit not null
-);
-
 create table Reservas(
     ID_Reserva int identity(1,1) primary key,
     ID_Cliente int not null,
@@ -238,7 +230,6 @@ ALTER TABLE DetalleIngreso ADD FOREIGN KEY(ID_Ingreso) REFERENCES Ingreso (ID_In
 ALTER TABLE ExistenciaProducto ADD FOREIGN KEY(ID_Articulo)REFERENCES Articulo(ID_Articulo);
 alter table Envios add foreign key(ID_Cliente) references Clientes(ID_Cliente);
 alter table CarritoCompras add foreign key(ID_Cliente) references Clientes(ID_Cliente);
-alter table Vacaciones add foreign key(ID_Empleado) references Empleados(ID_Empleado);
 alter table CarritoCompras add foreign key(ID_Articulo) references Articulo(ID_Articulo);
 alter table Articulo add foreign key(ID_Proveedor) references Proveedores(ID_Proveedor);
 alter table Reservas add foreign key(ID_Cliente) references Clientes(ID_Cliente);
