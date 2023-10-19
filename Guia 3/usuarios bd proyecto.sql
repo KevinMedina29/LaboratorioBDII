@@ -46,7 +46,6 @@ alter role Rutero add member rutero_user;
 grant control on database::TiendaLacteos to Administrador;
 
 grant select, insert, update, delete on dbo.Empleados to Gerente;
-grant select, insert, update, delete on dbo.Vacaciones to Gerente;
 grant select, insert, update, delete on dbo.Cargo to Gerente;
 grant select, insert, update, delete on dbo.Articulo to Gerente;
 grant select, insert, update, delete on dbo.Proveedores to Gerente;
